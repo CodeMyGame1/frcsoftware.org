@@ -1,5 +1,3 @@
-package solution;
-
 public class Print {
     public static void main(String args[]) {
         // Print "Hello World!", with a newline at the end.
