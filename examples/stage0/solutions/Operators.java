@@ -28,6 +28,25 @@ void main() {
     // value of 5.0 divided by 3. Then print the value of `quotient2`.
     double quotient2 = 5.0 / 3;
     System.out.println(quotient2);
+    
+    // Create a variable `normalizedAngle` that takes `rawEncoderDegrees`
+    // and calculates its "true" value (as a degree amount from 0 to 360).
+    // Then print the value of `normalizedAngle`.
+    int rawEncoderDegrees = 560;
+    int normalizedAngle = 560 % 360;
+    System.out.println(normalizedAngle);
+
+    // Using only the increment operator, add 1 to the `timer` variable below.
+    // Then print the value of `timer`.
+    int timer = 1000;
+    timer++;
+    System.out.println(timer);
+
+    // Using only the decrement operator, subtract 1 from the `secondsLeftInMatch`
+    // variable below. Then print the value of `secondsLeftInMatch`.
+    int secondsLeftInMatch = 85;
+    secondsLeftInMatch--;
+    System.out.println(secondsLeftInMatch);
 
     // TODO: Type casting if requested.
 
