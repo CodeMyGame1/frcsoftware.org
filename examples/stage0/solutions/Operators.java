@@ -48,8 +48,6 @@ void main() {
     secondsLeftInMatch--;
     System.out.println(secondsLeftInMatch);
 
-    // TODO: Type casting if requested.
-
     // Print the sum, difference, product, and quotient of the two variables
     // below. Especially take note of how the quotient is printed.
     int num1 = 15;
