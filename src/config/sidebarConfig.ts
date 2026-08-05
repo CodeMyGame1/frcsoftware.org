@@ -13,19 +13,14 @@ export type SidebarSection = {
     items: SidebarItem[];
 };
 
+export type Item = {
+    label: string;
+    href?: string;
+    items?: Item[];
+};
+
 // Define which URL paths belong to which sidebar section
 export const sidebarSections: Record<string, SidebarSection[]> = {
-    // Home page - minimal sidebar or none
-    '/': [],
-
-    // Feature Guide section
-    '/feature-guide': [
-        {
-            label: 'Website Feature Guide',
-            items: [{ label: 'Overview', slug: 'feature-guide' }],
-        },
-    ],
-
     // Learning Course section
     '/learning-course': [
         {
@@ -33,7 +28,7 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
             items: [
                 { label: 'Overview', slug: 'learning-course' },
                 {
-                    label: 'Feature Guide',
+                    label: 'Website Feature Guide',
                     slug: 'learning-course/getting-started/website-feature-guide',
                 },
                 {
@@ -60,56 +55,50 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                     items: [
                         {
                             label: 'Stage 0 Introduction',
-                            slug: 'learning-course/intro-to-java/stage-overview',
+                            slug: 'learning-course/stage0/stage-overview',
                         },
                         {
-                            label: 'Intro To Java',
-                            collapsed: true,
-                            items: [
-                                {
-                                    label: 'Java Fundamentals',
-                                    slug: 'learning-course/intro-to-java/java-fundamentals',
-                                },
-                                // {
-                                //     label: 'Operators',
-                                //     slug: 'learning-course/intro-to-java/operators',
-                                // },
-                                // {
-                                //     label: 'Conditionals',
-                                //     slug: 'learning-course/intro-to-java/conditionals',
-                                // },
-                                // {
-                                //     label: 'Loops',
-                                //     slug: 'learning-course/intro-to-java/loops',
-                                // },
-                                // {
-                                //     label: 'Objects',
-                                //     slug: 'learning-course/intro-to-java/objects',
-                                // },
-                                // {
-                                //     label: 'Methods',
-                                //     slug: 'learning-course/intro-to-java/methods',
-                                // },
-                            ],
+                            label: 'Java Fundamentals',
+                            slug: 'learning-course/stage0/java-fundamentals',
                         },
+                        {
+                            label: 'Operators',
+                            slug: 'learning-course/stage0/operators',
+                        },
+                        {
+                            label: 'Conditionals',
+                            slug: 'learning-course/stage0/conditionals',
+                        },
+                        // {
+                        //     label: 'Loops',
+                        //     slug: 'learning-course/stage0/loops',
+                        // },
+                        {
+                            label: 'Classes, Fields, and Methods',
+                            slug: 'learning-course/stage0/classes-methods',
+                        },
+                        // {
+                        //     label: 'Methods',
+                        //     slug: 'learning-course/stage0/methods',
+                        // },
                     ],
                 },
                 {
                     label: 'Stage 1',
                     collapsed: true,
                     items: [
-                        // {
-                        //     label: 'Stage 1 Introduction',
-                        //     slug: 'learning-course/stage-1a-commands/overview',
-                        // },
                         {
-                            label: 'Stage 1A: TBD',
+                            label: 'Stage 1 Introduction',
+                            slug: 'learning-course/stage1/stage-overview',
+                        },
+                        {
+                            label: 'Stage 1A',
                             collapsed: true,
                             items: [
-                                // {
-                                //     label: 'TBD',
-                                //     slug: 'stage-1a-commands/command-based-overview',
-                                // },
+                                {
+                                    label: 'Stage 1A Introduction',
+                                    slug: 'learning-course/stage1/stage1a/stage-overview',
+                                },
                                 // {
                                 //     label: 'TBD',
                                 //     slug: 'stage-1a-commands/the-command-body',
@@ -124,48 +113,42 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                             label: 'Stage 1B: Commands',
                             collapsed: true,
                             items: [
-                                // {
-                                //     label: 'Stage 1B Introduction',
-                                //     slug: 'learning-course/stage1b/overview',
-                                // },
-                                // {
-                                //     label: '1B',
-                                //     collapsed: true,
-                                //     items: [
-                                //         {
-                                //             label: 'The Concepts',
-                                //             slug: 'stage-1b-commands/command-based-overview',
-                                //         },
-                                //         {
-                                //             label: 'The Body of a Command',
-                                //             slug: 'stage-1b-commands/the-command-body',
-                                //         },
-                                //         {
-                                //             label: 'Commands & Mechanisms, Pt. 1',
-                                //             slug: 'stage-1b-commands/commands-and-mechanisms',
-                                //         },
-                                //         {
-                                //             label: 'Triggers and Scheduling',
-                                //             slug: 'stage-1b-commands/triggers',
-                                //         },
-                                //         {
-                                //             label: 'Commands & Mechanisms, Pt. 2',
-                                //             slug: 'stage-1b-commands/commands-and-mechanisms-pt2',
-                                //         },
-                                //         {
-                                //             label: 'Exercise - Kitbot Rewrite, Pt. 1',
-                                //             slug: 'stage-1b-commands/command-based-kitbot',
-                                //         },
-                                //         {
-                                //             label: 'Suppliers in Command-Based',
-                                //             slug: 'stage-1b-commands/suppliers-in-command-based',
-                                //         },
-                                //         {
-                                //             label: 'Exercise - Kitbot Rewrite, Pt. 2',
-                                //             slug: 'stage-1b-commands/command-based-kitbot-pt2',
-                                //         },
-                                //     ],
-                                // },
+                                {
+                                    label: 'Stage 1B Introduction',
+                                    slug: 'learning-course/stage1/stage1b/stage-overview',
+                                },
+                                {
+                                    label: 'The Concepts',
+                                    slug: 'learning-course/stage1/stage1b/command-based-overview',
+                                },
+                                {
+                                    label: 'The Body of a Command',
+                                    slug: 'learning-course/stage1/stage1b/the-command-body',
+                                },
+                                {
+                                    label: 'Commands & Mechanisms, Pt. 1',
+                                    slug: 'learning-course/stage1/stage1b/commands-and-mechanisms',
+                                },
+                                {
+                                    label: 'Triggers and Scheduling',
+                                    slug: 'learning-course/stage1/stage1b/triggers',
+                                },
+                                {
+                                    label: 'Commands & Mechanisms, Pt. 2',
+                                    slug: 'learning-course/stage1/stage1b/commands-and-mechanisms-pt2',
+                                },
+                                {
+                                    label: 'Exercise - Kitbot Rewrite, Pt. 1',
+                                    slug: 'learning-course/stage1/stage1b/command-based-kitbot',
+                                },
+                                {
+                                    label: 'Suppliers in Command-Based',
+                                    slug: 'learning-course/stage1/stage1b/suppliers-in-command-based',
+                                },
+                                {
+                                    label: 'Exercise - Kitbot Rewrite, Pt. 2',
+                                    slug: 'learning-course/stage1/stage1b/command-based-kitbot-pt2',
+                                },
                             ],
                         },
                     ],
@@ -208,6 +191,35 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
         },
     ],
 
+    // Best Practices section
+    '/best-practices': [
+        {
+            label: 'Best Practices',
+            items: [
+                {
+                    label: 'Overview',
+                    slug: 'best-practices/overview',
+                },
+                {
+                    label: 'Git Usage',
+                    slug: 'best-practices/git-usage',
+                },
+                {
+                    label: 'GitHub Usage',
+                    slug: 'best-practices/github-usage',
+                },
+                {
+                    label: 'Code Formatter',
+                    slug: 'best-practices/code-formatter',
+                },
+                {
+                    label: 'CI Checks',
+                    slug: 'best-practices/ci-checks',
+                },
+            ],
+        },
+    ],
+
     // Other Resources section (maps to /resources in content)
     '/other-resources': [
         {
@@ -215,6 +227,7 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
             items: [
                 { label: 'Overview', slug: 'resources' },
                 { label: 'Glossary', slug: 'resources/glossary' },
+                { label: 'Documentation', slug: 'resources/docs' },
             ],
         },
     ],
@@ -234,67 +247,6 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
             ],
         },
     ],
-
-    // Getting Started section
-    '/getting-started': [
-        {
-            label: 'Getting Started',
-            items: [
-                {
-                    label: 'Website Feature Guide',
-                    slug: 'getting-started/website-feature-guide',
-                },
-                {
-                    label: 'Intro to Programming',
-                    slug: 'getting-started/intro-to-prog',
-                },
-                {
-                    label: 'Required Tools',
-                    slug: 'getting-started/required-tools',
-                },
-                {
-                    label: 'VS Code Overview',
-                    slug: 'getting-started/vscode-overview',
-                },
-                {
-                    label: 'Forking and Cloning',
-                    slug: 'getting-started/forking-and-cloning',
-                },
-                {
-                    label: 'Intro to Java',
-                    slug: 'intro-to-java/stage-overview',
-                },
-            ],
-        },
-    ],
-
-    // Intro To Java section
-    '/intro-to-java': [
-        {
-            label: 'Intro to Java',
-            items: [
-                {
-                    label: 'Stage Overview',
-                    slug: 'intro-to-java/stage-overview',
-                },
-                {
-                    label: 'Java fundamentals',
-                    slug: 'intro-to-java/java-fundamentals',
-                },
-            ],
-        },
-    ],
-
-    // Resources section (content lives at /resources but navbar says "Other Resources")
-    // '/resources': [
-    //   {
-    //     label: 'Resources',
-    //     items: [
-    //       { label: 'Overview', slug: 'resources' },
-    //       { label: 'Glossary', slug: 'resources/glossary' },
-    //     ],
-    //   },
-    // ],
 };
 
 /**
@@ -324,12 +276,7 @@ export function getSidebarForPath(pathname: string): SidebarSection[] {
         }
     }
 
-    if (bestMatch) {
-        return sidebarSections[bestMatch];
-    }
-
-    // Default to home (empty sidebar)
-    return sidebarSections['/'] || [];
+    return sidebarSections[bestMatch || '/'] ?? sidebarSections['/'] ?? [];
 }
 
 /**
@@ -378,12 +325,10 @@ export function getPrevNextLinks(pathname: string): {
     if (currentIndex === -1) {
         return { prev: null, next: null };
     }
-
+    const prev = allLinks.at(currentIndex - 1) ?? null;
+    const next = allLinks.at(currentIndex + 1) ?? null;
     return {
-        prev: currentIndex > 0 ? allLinks[currentIndex - 1] : null,
-        next:
-            currentIndex < allLinks.length - 1
-                ? allLinks[currentIndex + 1]
-                : null,
+        prev,
+        next,
     };
 }
