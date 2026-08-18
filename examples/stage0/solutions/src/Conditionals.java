@@ -1,18 +1,24 @@
+/*
+ * Copyright 2026 FRCSoftware
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
 void main() {
-    // Using the variable `turretEnabled` below, decide whether to turn on
-    // (turretVelocity = 1) or turn off (turretVelocity = 0) the shooter motors.
-    // Then print the value of `turretVelocity`. After running, change
+    // Using the variable `shooterEnabled` below, decide whether to turn on
+    // (shooterVelocity = 1) or turn off (shooterVelocity = 0) the shooter motors.
+    // Then print the value of `shooterVelocity`. After running, change
     // `shooterEnabled` to `true`; the code should now print 1
     boolean shooterEnabled = false;
-    int turretVelocity;
+    int shooterVelocity;
     if (shooterEnabled == true) {
-        turretVelocity = 1;
+        shooterVelocity = 1;
     } else {
-        turretVelocity = 0;
+        shooterVelocity = 0;
     }
-    System.out.println(turretVelocity);
+    System.out.println(shooterVelocity);
 
-    // Using only the NOT EQUALS TO operator, and the variable `statusCode` below,
+    // Using only the NOT EQUALS operator, and the variable `statusCode` below,
     // print "Success!" if `statusCode` is "OK", and "There was an error."
     // otherwise. After running, change `statusCode` to "OK"; the code should 
     // now print "Success!"
