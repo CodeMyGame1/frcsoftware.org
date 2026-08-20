@@ -4,6 +4,14 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+class Drivetrain {
+    public double setThrottle(double speed) {
+       return speed;
+    }
+}
+
+Drivetrain drivetrain = new Drivetrain();
+
 void main() {
     // Using the variable `shooterEnabled` below, decide whether to turn on
     // (shooterVelocity = 1) or turn off (shooterVelocity = 0) the shooter motors.
@@ -19,14 +27,17 @@ void main() {
     System.out.println(shooterVelocity);
 
     // Using only the NOT EQUALS operator, and the variable `statusCode` below,
-    // print "Success!" if `statusCode` is "OK", and "There was an error."
-    // otherwise. After running, change `statusCode` to "OK"; the code should 
-    // now print "Success!"
-    String statusCode = "ERROR";
-    if (statusCode != "OK") {
+    // print "Success!" if `statusCode` is 0, and "There was an error."
+    // if `statusCode` is 1. Else, you should print "User exited code."
+    // After running, change `statusCode` to 0, then 2; the code should 
+    // print "Success!" and "User exited code." respectively.
+    int statusCode = 1;
+    if (statusCode == 0) {
+        System.out.println("Success!");
+    } else if (statusCode == 1) {
         System.out.println("There was an error.");
     } else {
-        System.out.println("Success!");
+        System.out.println("User exited code.");
     }
 
     // If the value of `shooterAngleDeg` exceeds 75 degrees OR is less than 10 degrees,
@@ -42,12 +53,15 @@ void main() {
 
     // Sanitize and "deadband" the below input using the logical AND operator;
     // if `input` is between 5 and 100 (inclusive), print "Controller input detected"
-    // Otherwise, print "Discarding input."
+    // and use `drivetrain.setThrottle()`, passing in the input.
+    // Otherwise, print "Discarding input." and set input to 0.
     // After running, change `input` to 2; the code should now print "Discarding input."
     double input = 20;
     if ((input >= 5) && (input <= 100)) {
+        drivetrain.setThrottle(input);
         System.out.println("Controller input detected.");
     } else {
+        input = 0;
         System.out.println("Discarding input.");
     }
 
@@ -57,4 +71,5 @@ void main() {
     // `false`.
     boolean intakeDisabled = false;
     boolean intakeEnabled = !intakeDisabled;
+    System.out.println(intakeEnabled);
 }
