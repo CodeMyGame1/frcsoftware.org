@@ -52,13 +52,15 @@ void main() {
     }
 
     // Sanitize and "deadband" the below input using the logical AND operator;
+    //      Sanitize is rejecting values outside of the accepted range
+    //      Dead banding is rejecting small values
     // if `input` is between 5 and 100 (inclusive), print "Controller input detected"
     // and use `drivetrain.setThrottle()`, passing in the input.
     // Otherwise, print "Discarding input." and set input to 0.
     // After running, change `input` to 2; the code should now print "Discarding input."
     double input = 20;
+    drivetrain.setThrottle(input);
     if ((input >= 5) && (input <= 100)) {
-        drivetrain.setThrottle(input);
         System.out.println("Controller input detected.");
     } else {
         input = 0;
