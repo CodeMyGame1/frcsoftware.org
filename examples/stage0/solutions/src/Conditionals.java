@@ -32,9 +32,9 @@ void main() {
     // After running, change `statusCode` to 0, then 2; the code should 
     // print "Success!" and "User exited code." respectively.
     int statusCode = 1;
-    if (statusCode == 0) {
+    if (statusCode != 1) {
         System.out.println("Success!");
-    } else if (statusCode == 1) {
+    } else if (statusCode != 0) {
         System.out.println("There was an error.");
     } else {
         System.out.println("User exited code.");
