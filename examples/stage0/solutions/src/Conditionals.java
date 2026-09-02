@@ -40,6 +40,19 @@ void main() {
         System.out.println("User exited code.");
     }
 
+    // if `input` is over 5, print "Controller input detected"
+    // and use `drivetrain.setThrottle()`, passing in the input.
+    // Otherwise, print "Discarding input." and set input to 0.
+    // After running, change `input` to 2; the code should now print "Discarding input."
+    double input = 20;
+    drivetrain.setThrottle(input);
+    if (input >= 5) {
+        System.out.println("Controller input detected.");
+    } else {
+        input = 0;
+        System.out.println("Discarding input.");
+    }
+
     // If the value of `shooterAngleDeg` exceeds 75 degrees OR is less than 10 degrees,
     // print "The shooter has been stopped." Otherwise, print "The shooter is moving."
     // After running, change `shooterAngleDeg` to 76; the code should now print
@@ -49,22 +62,6 @@ void main() {
         System.out.println("The shooter has been stopped.");
     } else {
         System.out.println("The shooter is moving.");
-    }
-
-    // Sanitize and "deadband" the below input using the logical AND operator;
-    //      Sanitize is rejecting values outside of the accepted range
-    //      Dead banding is rejecting small values
-    // if `input` is between 5 and 100 (inclusive), print "Controller input detected"
-    // and use `drivetrain.setThrottle()`, passing in the input.
-    // Otherwise, print "Discarding input." and set input to 0.
-    // After running, change `input` to 2; the code should now print "Discarding input."
-    double input = 20;
-    drivetrain.setThrottle(input);
-    if ((input >= 5) && (input <= 100)) {
-        System.out.println("Controller input detected.");
-    } else {
-        input = 0;
-        System.out.println("Discarding input.");
     }
 
     // Define a variable `intakeEnabled` whose value is the inverse of `intakeDisabled`,
