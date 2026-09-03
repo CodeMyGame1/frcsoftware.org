@@ -9,7 +9,7 @@ class Drivetrain {
      * Dummy function that spins drivetrain motors at the specified speed.
      * @param speed
      */
-    public void setThrottle(double speed) {
+    public void setThrottle(int speed) {
         String throttleInfo = String.format("Spinning drivetrain motors at speed: %d", speed);
         System.out.println(throttleInfo);
     }
@@ -37,8 +37,8 @@ void main() {
     // Otherwise, print "Discarding input." and set `input` to 0. Then, below the conditional
     // statement, call `drivetrain.setThrottle()`, passing in the variable `input`.
     // After running the code, change `input` to 2; the code should now print
-    // "Discarding input." and should not print "Spinning drivetrain motors at speed..."
-    double input = 20;
+    // "Discarding input."
+    int input = 20;
 
 
     // If the value of `shooterAngleDeg` exceeds 75 degrees OR is less than 10 degrees,
