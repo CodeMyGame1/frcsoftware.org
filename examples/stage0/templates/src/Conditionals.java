@@ -28,10 +28,11 @@ void main() {
     int statusCode = 1;
 
 
-    // if `input` is over 5, print "Controller input detected"
-    // and use `drivetrain.setThrottle()`, passing in the input.
-    // Otherwise, print "Discarding input." and set input to 0.
-    // After running, change `input` to 2; the code should now print "Discarding input."
+    // If `input` is greater than or equal to 5, print "Controller input detected."
+    // Otherwise, print "Discarding input." and set `input` to 0.
+    // Then, call `drivetrain.setThrottle()`, passing in the variable `input`.
+    // After running the code, change `input` to 2; the code should now print
+    // "Discarding input."
     double input = 20;
 
 
